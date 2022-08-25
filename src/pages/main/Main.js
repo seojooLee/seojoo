@@ -1,10 +1,17 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 
 const Main = () => {
     const navigate = useNavigate();
     const [cursorLocation, setCursorLocation] = useState({ x: 0, y: 0 });
+
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+    const isTablet = useMediaQuery({
+        query: '(min-width: 768px) and (max-width: 1279px)',
+    });
+
     useEffect(() => {
         window.addEventListener('mousemove', e => {
             const mouseX = e.clientX - 50;
