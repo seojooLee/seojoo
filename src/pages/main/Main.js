@@ -1,36 +1,30 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styled, { css, keyframes } from "styled-components";
-
-import Image1 from "../../../src/img/me1.png";
-import Image2 from "../../../src/img/me2.png";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled, { css, keyframes } from 'styled-components';
 
 const Main = () => {
-  const moveBtnRef = useRef(null);
-  const navigate = useNavigate();
-  const [cursorLocation, setCursorLocation] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
-      const mouseX = e.clientX - 50;
-      const mouseY = e.clientY - 50;
-      setCursorLocation({ x: mouseX, y: mouseY });
-    });
-  }, []);
-  return (
-    <Layout>
-      <Default>
-        <Image src={Image1} alt="noImage" draggable={false} />
-        안녕하세요, 이서주입니다.
-        <Circle></Circle>
-      </Default>
-      <MoveBtn
-        cursorLocation={cursorLocation}
-        onClick={() => navigate("/about")}
-      >
-        들어가기
-      </MoveBtn>
-    </Layout>
-  );
+    const moveBtnRef = useRef(null);
+    const navigate = useNavigate();
+    const [cursorLocation, setCursorLocation] = useState({ x: 0, y: 0 });
+    useEffect(() => {
+        window.addEventListener('mousemove', e => {
+            const mouseX = e.clientX - 50;
+            const mouseY = e.clientY - 50;
+            setCursorLocation({ x: mouseX, y: mouseY });
+        });
+    }, []);
+    return (
+        <Layout>
+            <Default>
+                <Image src={'/image/me1.png'} alt="noImage" draggable={false} />
+                안녕하세요, 이서주입니다.
+                <Circle></Circle>
+            </Default>
+            <MoveBtn cursorLocation={cursorLocation} onClick={() => navigate('/about')}>
+                들어가기
+            </MoveBtn>
+        </Layout>
+    );
 };
 
 const BgAnimation = keyframes`
@@ -61,60 +55,59 @@ const CircleAnimation = keyframes`
 `;
 
 const MoveBtn = styled.div`
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  left: 30px;
-  background: black;
-  border-radius: 50%;
-  opacity: 30%;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  ${({ cursorLocation }) =>
-    cursorLocation &&
-    css`
-      left: ${cursorLocation.x}px;
-      top: ${cursorLocation.y}px;
-    `}
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 30px;
+    background: black;
+    border-radius: 50%;
+    opacity: 30%;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    ${({ cursorLocation }) =>
+        cursorLocation &&
+        css`
+            left: ${cursorLocation.x}px;
+            top: ${cursorLocation.y}px;
+        `}
 `;
 const Circle = styled.div`
-  position: absolute;
-  z-index: -1;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  animation: ${CircleAnimation} 6s ease-in Infinite Alternate;
+    position: absolute;
+    z-index: -1;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    animation: ${CircleAnimation} 6s ease-in Infinite Alternate;
 `;
 
 const Layout = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  user-select: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    user-select: none;
 
-  animation: ${BgAnimation} 10s ease-in infinite;
+    animation: ${BgAnimation} 10s ease-in infinite;
 `;
 
 const Default = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  gap: 2.3rem;
+    gap: 2.3rem;
 `;
 
 const Image = styled.img`
-  width: 400px;
-  &:hover {
-    transition: 3s ease-in-out;
-    /* content: url(${Image2}); */
-  }
+    width: 400px;
+    &:hover {
+        transition: 3s ease-in-out;
+    }
 `;
 export default React.memo(Main);
