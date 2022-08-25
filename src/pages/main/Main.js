@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
 const Main = () => {
-    const moveBtnRef = useRef(null);
     const navigate = useNavigate();
     const [cursorLocation, setCursorLocation] = useState({ x: 0, y: 0 });
     useEffect(() => {
@@ -16,11 +15,11 @@ const Main = () => {
     return (
         <Layout>
             <Default>
-                <Image src={'/image/me1.png'} alt="noImage" draggable={false} />
+                <Image src={process.env.PUBLIC_URL + '/image/me1.png'} alt="noImage" draggable={false} />
                 안녕하세요, 이서주입니다.
                 <Circle></Circle>
             </Default>
-            <MoveBtn cursorLocation={cursorLocation} onClick={() => navigate('/about')}>
+            <MoveBtn cursorLocation={cursorLocation} onClick={() => navigate('/seojoo/about')}>
                 들어가기
             </MoveBtn>
         </Layout>
