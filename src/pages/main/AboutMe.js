@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
+import RSS from "../../components/Rss";
 
 const AboutMe = () => {
   const [activeItem, setActiveItem] = useState("edu");
@@ -35,6 +36,7 @@ const AboutMe = () => {
       }
     >
       <Default>
+        <RSS />
         <Card>
           <Image
             src={process.env.PUBLIC_URL + "/image/hello.png"}
