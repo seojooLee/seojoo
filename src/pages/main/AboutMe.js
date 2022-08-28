@@ -88,10 +88,7 @@ const BgAnimation = (color) => keyframes`
 const SubArea = styled.div`
   width: 100%;
   max-width: 1400px;
-  max-height: 40rem;
-  min-height: 40rem;
 
-  min-width: 1400px;
   overflow: hidden;
 `;
 
@@ -186,6 +183,7 @@ const Layout = styled.div`
   font-family: "NanumSquare";
   animation: ${(props) => BgAnimation(props.color)} 10s ease-in infinite;
   transition: all 3s;
+  padding: 20px;
 `;
 
 const Card = styled.div`
@@ -203,10 +201,13 @@ const Default = styled.div`
   flex-direction: column;
 
   max-width: 1400px;
-  padding: 0 20px;
+  height: 100%;
   margin: 0 auto;
   width: 100%;
   gap: 2.3rem;
+
+  width: 100%;
+  font-size: 4rem;
 `;
 
 export default React.memo(AboutMe);

@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
+import { ReactComponent as ReactIcon } from "../../logo/React-icon.svg";
+import { ReactComponent as HtmlIcon } from "../../logo/Html-icon.svg";
+import { ReactComponent as JavaIcon } from "../../logo/Java-icon.svg";
 
 const EduPage = () => {
   const [firstRendering, setFirstRendering] = useState(true);
@@ -165,58 +168,92 @@ const EduPage = () => {
         </table>
       </Layout>
       <WorkDetailArea>
-        {workDetail.current.map((item, index) => {
-          return (
-            <>
-              {item.data.map((work) => {
-                return (
-                  <div className="data">
-                    <li className="title"> {work.title}</li>
-                    <li>
-                      <div className="label">진행기간</div>
-                      <div className="value">{work.date}</div>
-                    </li>
-                    <li>
-                      <div className="label">주요내용 </div>
-                      <div className="value">{work.impTxt}</div>
-                    </li>
-                    <li>
-                      <div className="label">사용한 기술스택 및 지식 </div>
-                      <div className="value">{work.stack}</div>
-                    </li>
-                    <li>
-                      <div className="label">결과/성과 </div>
-                      <div className="value">{work.result}</div>
-                    </li>
-                    <li>
-                      <div className="label">상세담당업무 </div>
-                      <div className="value">
-                        {work.detailWork.map((detail) => {
-                          return <li>{detail}</li>;
-                        })}
-                      </div>
-                    </li>
-                  </div>
-                );
-              })}
-            </>
-          );
-        })}
+        <TagList>
+          <IconButton>
+            <HtmlIcon height={28} width={28} />
+          </IconButton>
+          <IconButton>
+            <ReactIcon height={28} width={28} />
+          </IconButton>
+          <IconButton>
+            <JavaIcon height={28} width={28} />
+          </IconButton>
+        </TagList>
+        <WorkListArea>
+          {workDetail.current.map((item, index) => {
+            return (
+              <>
+                {item.data.map((work) => {
+                  return (
+                    <div className="data">
+                      <li className="title"> {work.title}</li>
+                      <li>
+                        <div className="label">진행기간</div>
+                        <div className="value">{work.date}</div>
+                      </li>
+                      <li>
+                        <div className="label">주요내용 </div>
+                        <div className="value">{work.impTxt}</div>
+                      </li>
+                      <li>
+                        <div className="label">사용한 기술스택 및 지식 </div>
+                        <div className="value">{work.stack}</div>
+                      </li>
+                      <li>
+                        <div className="label">결과/성과 </div>
+                        <div className="value">{work.result}</div>
+                      </li>
+                      <li>
+                        <div className="label">상세담당업무 </div>
+                        <div className="value">
+                          {work.detailWork.map((detail) => {
+                            return <li>{detail}</li>;
+                          })}
+                        </div>
+                      </li>
+                    </div>
+                  );
+                })}
+              </>
+            );
+          })}
+        </WorkListArea>
       </WorkDetailArea>
     </FlexTable>
   );
 };
 
-const WorkDetailArea = styled.div`
-  width: 80%;
-  max-height: 40rem;
-  margin: 0 auto;
-  height: 100%;
+const WorkListArea = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
+`;
+
+const TagList = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  gap: 10px;
+`;
+
+const IconButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5%;
+`;
+
+const WorkDetailArea = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
   gap: 20px;
   overflow: auto;
   padding-right: 3px;
+  position: relative;
+  justify-content: space-between;
 
   .data {
     background-color: #ffffff94;
