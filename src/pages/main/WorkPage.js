@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
-import { ReactComponent as ReactIcon } from "../../logo/React-icon.svg";
-import { ReactComponent as HtmlIcon } from "../../logo/Html-icon.svg";
-import { ReactComponent as JavaIcon } from "../../logo/Java-icon.svg";
+
+import LangButton from "../../components/LangButton";
 
 const EduPage = () => {
-  const [firstRendering, setFirstRendering] = useState(true);
+  const initialState = ["HTML", "STYLED", "JAVA", "REACT"];
 
+  const [firstRendering, setFirstRendering] = useState(true);
+  const [langFilter, setLangFilter] = useState(initialState);
   useEffect(() => {
     if (firstRendering) {
       setFirstRendering(false);
@@ -31,7 +32,15 @@ const EduPage = () => {
           title: "영업 관리 시스템 개발 및 운영, 유지보수",
           date: "2019.09.02~2021.12.31",
           impTxt: `사내의 영업이익/ 투입 관리할 수 있는 웹사이트 유지보수 및 개선`,
-          stack: "Spring Framework, Java, JSP, Mybatis, MYSQL, AWS, JQuery",
+          stack: [
+            "Spring Framework",
+            "JAVA",
+            "JSP",
+            "Mybatis",
+            "MYSQL",
+            "AWS",
+            "JQuery",
+          ],
           result:
             "소나큐브를 통해 버그/취약점 개선하여 안정성 수립 / MSA 구조 전환",
           detailWork: [
@@ -46,7 +55,7 @@ const EduPage = () => {
           title: "목표 서비스 개발 (OKR)",
           date: "2020.04.01.~2020.05.10",
           impTxt: `사내 부서/기업별 목표 및 진척도 관리 페이지 개발`,
-          stack: "Spring Framework, Java, JSP, Mybatis, MYSQL, AWS, JQuery",
+          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQuery"],
           result: "매 주마다, OKR 기반 데이터로 사업부장 주간보고 시행",
           detailWork: [
             "OKR 기반의 주간보고 페이지 개발",
@@ -57,7 +66,7 @@ const EduPage = () => {
           title: "목표 서비스 개발 (OKR)",
           date: "2020.04.01.~2020.05.10",
           impTxt: `사내 부서/기업별 목표 및 진척도 관리 페이지 개발`,
-          stack: "Spring Framework, Java, JSP, Mybatis, MYSQL, AWS, JQuery",
+          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQuery"],
           result: "매 주마다, OKR 기반 데이터로 사업부장 주간보고 시행",
           detailWork: [
             "OKR 기반의 주간보고 페이지 개발",
@@ -68,7 +77,7 @@ const EduPage = () => {
           title: "전표 데이터, 양식 자동화 프로그램 개발",
           date: "2021.07~2021.09",
           impTxt: `전표 데이터 엑셀파일 첨부 시 자동 전표 양식으로 변환해주는 프로그램 개발`,
-          stack: "Spring Framework, Java, JSP, Mybatis, MYSQL, AWS, JQuery",
+          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQuery"],
           result: "500개 이상의 데이터 수기입력 =≫ 자동화 변환",
           detailWork: [
             "데이터 자동 전표 양식 변환 로직 개발",
@@ -79,7 +88,7 @@ const EduPage = () => {
           title: "사내 유연 º휴가 통합 서비스 개발",
           date: "2021.04~2021.06",
           impTxt: `사내 직원들의 휴가와 근무시간을 기록/관리하는 웹서비스 제작`,
-          stack: "React.js, Spring Boot, JPA, Jenkins , Mysql",
+          stack: ["REACT", "Spring Boot", "JPA", "Jenkins", "Mysql"],
           result: "서면결제-≫시스템화, 개발 프로세스 구축",
           detailWork: [
             "피그마 툴 이용하여 UI 기획",
@@ -93,7 +102,7 @@ const EduPage = () => {
           title: "현장실습 기업현장교육 지원",
           date: "2021.08~2021.12",
           impTxt: `현장실습생 2명 MSA 및 Spring Cloud CICD 환경 교육`,
-          stack: "React.js, JPA, Jenkins",
+          stack: ["REACT", "JPA", "Jenkins"],
           result: "현장실습생 업무 적응 도움",
           detailWork: [
             "MSA 구조 및 모놀리식 아키텍처 설명",
@@ -105,7 +114,7 @@ const EduPage = () => {
           title: "ELIGA 인터랙션 서비스 개발",
           date: "2022.01~2022.03",
           impTxt: `사이니지에 표시될 콘텐츠 편집기 제작`,
-          stack: "React.js(RTK), Node.js",
+          stack: ["REACT", "RTK", "JPA", "Jenkins"],
           result: "redux toolkit query 학습",
           detailWork: [
             "콘텐츠 편집화면 프레임 기능 개발",
@@ -117,7 +126,7 @@ const EduPage = () => {
           title: "ELIGA STORE 사내카페 서비스 개발",
           date: "2022.05~2022.07",
           impTxt: `사내카페 주문시스템 제작`,
-          stack: "React.js(Redux Thunk), Node.js",
+          stack: ["REACT", "THUNK", "NODE.JS"],
           result: "카카오 아지트 사내카페 도입 과정 경험",
           detailWork: [
             "식당/카페 CMS 페이지 리포트 기능 개발",
@@ -130,7 +139,7 @@ const EduPage = () => {
           title: "국립중앙박물관 ETRI 큐레이터 웹사이트",
           date: "2022.07~2022.09",
           impTxt: `큐레이터 전시회 기획을 위한, 소장품 관리할 수 있는 웹 제작`,
-          stack: "React.js, Typescript, Node.js",
+          stack: ["REACT", "Typescript", "NODE.JS", "JENKINS"],
           result: "개발프로세스 경험, Typescript 기반으로 제작",
           detailWork: [
             "로그인, 프로젝트/소장품 상세페이지 프론트엔드 개발",
@@ -141,17 +150,31 @@ const EduPage = () => {
     },
   ]);
 
+  const handleClickFilter = useCallback(
+    (item) => {
+      const findIndex = langFilter.findIndex((lang) => lang === item);
+      if (findIndex > -1) {
+        setLangFilter(langFilter.filter((lang) => lang !== item));
+      } else {
+        setLangFilter(langFilter.concat(item));
+      }
+    },
+    [langFilter]
+  );
+
   return (
     <FlexTable width={"100%"} firstRendering={firstRendering}>
       <Layout>
         <table>
-          <tr>
-            <th>재직 기간</th>
-            <th>회사명</th>
-            <th>직급</th>
-            <th>업무 상세</th>
-            <th>주요직무</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>재직 기간</th>
+              <th>회사명</th>
+              <th>직급</th>
+              <th>업무 상세</th>
+              <th>주요직무</th>
+            </tr>
+          </thead>
           <tbody>
             {intro.current.map((item) => {
               return (
@@ -169,15 +192,15 @@ const EduPage = () => {
       </Layout>
       <WorkDetailArea>
         <TagList>
-          <IconButton>
-            <HtmlIcon height={28} width={28} />
-          </IconButton>
-          <IconButton>
-            <ReactIcon height={28} width={28} />
-          </IconButton>
-          <IconButton>
-            <JavaIcon height={28} width={28} />
-          </IconButton>
+          TOP LANG
+          {initialState.map((item) => (
+            <LangButton
+              elemType={"BUTTON"}
+              isActive={langFilter.some((t) => t === item)}
+              type={item}
+              onClick={() => handleClickFilter(item)}
+            />
+          ))}
         </TagList>
         <WorkListArea>
           {workDetail.current.map((item, index) => {
@@ -197,7 +220,18 @@ const EduPage = () => {
                       </li>
                       <li>
                         <div className="label">사용한 기술스택 및 지식 </div>
-                        <div className="value">{work.stack}</div>
+                        <div className="value stack">
+                          {work.stack.map((item) => {
+                            console.log(item);
+                            return (
+                              <LangButton
+                                isActive={langFilter.some((t) => t === item)}
+                                elemType={"text"}
+                                type={item}
+                              />
+                            );
+                          })}
+                        </div>
                       </li>
                       <li>
                         <div className="label">결과/성과 </div>
@@ -232,17 +266,16 @@ const WorkListArea = styled.div`
 const TagList = styled.div`
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   gap: 10px;
-`;
-
-const IconButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  margin: 40px;
+  background-color: white;
+  padding: 9px;
   border-radius: 5%;
+  font-size: 5pt;
+  font-weight: 600;
 `;
 
 const WorkDetailArea = styled.div`
@@ -250,7 +283,6 @@ const WorkDetailArea = styled.div`
   margin: 0 auto;
   display: flex;
   gap: 20px;
-  overflow: auto;
   padding-right: 3px;
   position: relative;
   justify-content: space-between;
@@ -262,6 +294,7 @@ const WorkDetailArea = styled.div`
     gap: 24px;
     padding: 21px 35px;
     font-size: 1.2rem;
+    border-bottom: 1px solid #ffffff54;
 
     li {
       display: flex;
@@ -292,6 +325,10 @@ const WorkDetailArea = styled.div`
         display: flex;
         flex-direction: column;
         gap: 10px;
+      }
+      .stack {
+        flex-direction: row;
+        gap: 3px;
       }
     }
 
@@ -344,20 +381,25 @@ const slideDown = keyframes`
 
 const Layout = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   user-select: none;
-  font-family: "NanumSquare";
+  position: sticky;
+  top: 0;
 
+  font-family: "NanumSquare";
+  z-index: 1;
   table {
     background: white;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    box-shadow: 6px 5px 10px 0px #4f4f4f38;
+
+    thead {
+      box-shadow: 1px 1px 7px 0px #b0b0b02b;
+    }
 
     th {
       padding: 5px;
@@ -376,12 +418,14 @@ export const FlexTable = styled.div`
   width: ${({ width }) => width};
   font-size: 2rem;
   padding: 10px 1rem;
-  height: 50rem;
+  /* height: 50rem; */
   font-size: 1.7rem;
   gap: 10px;
   display: flex;
   flex-direction: column;
 
+  position: sticky;
+  top: 0;
   ${({ firstRendering }) =>
     firstRendering
       ? css`
@@ -400,7 +444,7 @@ export const FlexTable = styled.div`
             css`
               animation-name: ${fadeOut};
             `}
-        `}
+        `};
 `;
 
 const Row = styled.tr``;

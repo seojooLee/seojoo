@@ -54,6 +54,7 @@ const RSS = () => {
 
   return (
     <Wrapper className="App">
+      <div className="title icon">블로그 Update!</div>
       {transitions((props, item) => {
         return (
           <animated.div key={props.key} style={props} className="title">
@@ -71,10 +72,25 @@ const Wrapper = styled.div`
   background-color: white;
   border-radius: 8px;
   padding: 10px 20px;
+  align-items: center;
+  gap: 10px;
   .title {
     display: flex;
-    flex: 1;
-    font-size: 2rem;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  .icon {
+    height: 100%;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
   }
 `;
 
