@@ -113,16 +113,18 @@ const Wrapper = styled.div`
   flex: 1;
   min-height: 969px;
   width: 100%;
-  animation: ${(props) => BgAnimation(props.color)} 10s ease-in infinite;
+  background: white;
+  /* animation: ${(props) => BgAnimation(props.color)} 10s ease-in infinite; */
 `;
 
 const ButtonArea = styled.div`
   width: 100%;
   display: flex;
   gap: 2px;
-  height: 80px;
+  justify-content: center;
+  height: 40px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 200px);
 `;
 
 const Button = styled.div`
@@ -159,13 +161,14 @@ const Image = styled.img`
 
 export const FlexTable = styled.div`
   width: ${({ width }) => width};
-  font-size: 2rem;
   /* background: white; */
   /* padding-left: 140px; */
-  font-size: 1.4rem;
+  font-size: 1rem;
   gap: 10px;
   display: flex;
   flex-direction: column;
+  background: #ffffff2b;
+  padding: 10px 20px;
 `;
 
 const FlexItem = styled.div`
@@ -214,6 +217,7 @@ const NameCard = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
+
     .circleBg {
       width: 400px;
       height: 400px;

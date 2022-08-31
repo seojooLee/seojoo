@@ -293,7 +293,7 @@ const WorkDetailArea = styled.div`
     flex-direction: column;
     gap: 24px;
     padding: 21px 35px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-bottom: 1px solid #ffffff54;
 
     li {
@@ -419,7 +419,7 @@ export const FlexTable = styled.div`
   font-size: 2rem;
   padding: 10px 1rem;
   /* height: 50rem; */
-  font-size: 1.7rem;
+  font-size: 1rem;
   gap: 10px;
   display: flex;
   flex-direction: column;

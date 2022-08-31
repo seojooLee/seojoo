@@ -6,11 +6,21 @@ import Main from "../pages/main/Main";
 import AboutMe from "../pages/main/AboutMe";
 import EduPage from "../pages/main/EduPage";
 import WorkPage from "../pages/main/WorkPage";
+import Introduce from "../pages/main/Introduce";
 
 const Routes = () => {
   const mainRoutes: RouteObject = {
     path: "/seojoo",
-    element: <Main />,
+    children: [
+      {
+        index: true,
+        element: <Main />,
+      },
+      {
+        path: "intro",
+        element: <Introduce />,
+      },
+    ],
   };
 
   const introRoutes: RouteObject = {

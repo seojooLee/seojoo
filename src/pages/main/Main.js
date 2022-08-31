@@ -32,7 +32,7 @@ const Main = () => {
       </Default>
       <MoveBtn
         cursorLocation={cursorLocation}
-        onClick={() => navigate("/seojoo/about/edu")}
+        onClick={() => navigate("/seojoo/intro")}
       >
         들어가기
       </MoveBtn>
