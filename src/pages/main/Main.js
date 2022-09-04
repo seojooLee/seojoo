@@ -55,7 +55,7 @@ const BgAnimation = keyframes`
 const CircleAnimation = keyframes`
   from{ 
     transform : translate(0,0);
-    background: white;
+    background: #00000085;
     opacity : 20%;
   
   }
@@ -104,7 +104,6 @@ const Layout = styled.div`
   align-items: center;
   font-size: 4rem;
   user-select: none;
-
   animation: ${BgAnimation} 10s ease-in infinite;
 `;
 

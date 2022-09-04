@@ -14,12 +14,12 @@ const Introduce = () => {
     to: "rotate(348deg)",
   });
   const tryRef = [
-    "삽질 한시간을 (시간은 상대적)열정적으로 하고, 안되면 물어보자",
-    "내가 깨우친 것들을 기록하는 습관을 가지자",
-    "업무와 진척도를 공유하는 태도를 가지자",
-    "업무함에 있어 우선순위를 파악하자",
-    "안다는 선에서 끝나지 말고, 깊숙이 파고들자",
-    "중복된 코드를 최소화하자",
+    "- 농도있는 삽질을 하고, 안되면 물어보자",
+    "- 내가 깨우친 것들을 기록하는 습관을 가지자",
+    "- 업무와 진척도를 공유하는 태도를 가지자",
+    "- 업무함에 있어 우선순위를 파악하자",
+    "- 안다는 선에서 끝나지 말고, 깊숙이 파고들자",
+    "- 중복된 코드를 최소화하자",
   ];
   const config = { mass: 5, tension: 2000, friction: 200 };
 
@@ -101,18 +101,23 @@ function BackgroundAnimation() {
           top: "0%",
           width: "100%",
           height: "100%",
-          background: "lightblue",
+          background: "rgba(255,178,522,0.8)",
         });
         await next({
           height: "50%",
-          background: "lightgreen",
+          background: "rgba(15,178,522,0.8)",
+          border: "3px solid white",
         });
         await next({
           width: "50%",
           left: "50%",
-          background: "lightgoldenrodyellow",
+          background: "rgba(212,225,311,0.8)",
         });
-        await next({ top: "0%", height: "100%", background: "lightpink" });
+        await next({
+          top: "0%",
+          height: "100%",
+          background: "rgba(178,128,122,0.8)",
+        });
         await next({ top: "50%", height: "100%", background: "lightsalmon" });
         await next({ width: "100%", left: "0%", background: "lightcoral" });
         await next({ width: "50%", background: "lightseagreen" });

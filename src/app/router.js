@@ -7,6 +7,7 @@ import AboutMe from "../pages/main/AboutMe";
 import EduPage from "../pages/main/EduPage";
 import WorkPage from "../pages/main/WorkPage";
 import Introduce from "../pages/main/Introduce";
+import Language from "../pages/main/Language";
 
 const Routes = () => {
   const mainRoutes: RouteObject = {
@@ -37,7 +38,7 @@ const Routes = () => {
       },
       {
         path: "lang",
-        element: <WorkPage />,
+        element: <Language />,
       },
       {
         path: "certi",

@@ -11,7 +11,7 @@ const AboutMe = () => {
   const intro = useRef([
     { label: "이름", value: "이서주" },
     { label: "생일", value: "01.12.17 (22세/만 20세)" },
-    { label: "학력", value: "대학졸업예정" },
+    { label: "학력", value: "한국방송통신대학교 (졸업예정) " },
     { label: "e-mail", value: "teren621@gmail.com" },
     { label: "tech-blog", value: "https://potential-coding.tistory.com/" },
   ]);

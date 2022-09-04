@@ -74,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
     box-sizing: border-box;
-    background-color: #636D73;
+    background-color: white ;
     #root {
       width: 100%;
       height: 100%;
