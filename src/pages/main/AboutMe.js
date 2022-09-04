@@ -142,6 +142,7 @@ const Button = styled.div`
     isActive &&
     css`
       font-weight: 600;
+      border-bottom: 2px solid black;
       opacity: 80%;
       /* box-shadow: inset 1px 1px 11px 0px #584a4a4f; */
     `}
@@ -201,6 +202,8 @@ const Layout = styled.div`
   font-family: "NanumSquare";
   transition: all 3s;
   margin: 20px;
+  border-radius: 4px;
+  border: 2px solid black;
 `;
 
 const NameCard = styled.div`

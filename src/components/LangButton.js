@@ -37,6 +37,7 @@ const ColorType = {
   REACT: "SKYBLUE",
   JQuery: "PURPLE",
   AWS: "BLACK",
+  SPRING: "GREEN",
 };
 const LangText = styled.div`
   width: max-content;

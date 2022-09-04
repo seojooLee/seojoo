@@ -77,7 +77,7 @@ const Wrapper = styled.div`
   .title {
     display: flex;
     font-size: 1.2rem;
-
+    padding: 3px 10px;
     &:hover {
       color: blue;
     }

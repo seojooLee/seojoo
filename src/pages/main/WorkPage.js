@@ -273,9 +273,10 @@ const TagList = styled.div`
   margin: 40px;
   background-color: white;
   padding: 9px;
-  border-radius: 5%;
+  border-radius: 4px;
   font-size: 5pt;
   font-weight: 600;
+  border: 1px solid black;
 `;
 
 const WorkDetailArea = styled.div`
@@ -301,7 +302,8 @@ const WorkDetailArea = styled.div`
       align-items: center;
       &:hover {
         .value {
-          color: white;
+          font-weight: 400;
+          /* color: white; */
         }
       }
       div {
