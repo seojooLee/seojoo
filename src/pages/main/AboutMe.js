@@ -20,7 +20,7 @@ const AboutMe = () => {
     { color: "pink", label: "edu", value: "학력" },
     { color: "green", label: "work", value: "경력사항" },
     { color: "orange", label: "lang", value: "사용언어" },
-    { color: "purple", label: "certi", value: "자격증" },
+    // { color: "purple", label: "project", value: "개인 프로젝트" },
   ]);
 
   const handleClick = useCallback(
@@ -124,7 +124,7 @@ const ButtonArea = styled.div`
   justify-content: center;
   height: 40px;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(3, 200px);
 `;
 
 const Button = styled.div`

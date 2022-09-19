@@ -1,10 +1,29 @@
+import dayjs from "dayjs";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 import LangButton from "../../components/LangButton";
 
 const EduPage = () => {
-  const initialState = ["HTML", "STYLED", "JAVA", "REACT"];
+  const initialState = [
+    "HTML",
+    "STYLED",
+    "JAVA",
+    "REACT",
+    "JSP",
+    "NODE.JS",
+    "Mybatis",
+    "MYSQL",
+    "AWS",
+    "JQUERY",
+    "SpringBoot",
+    "JPA",
+    "Jenkins",
+    "SPRING",
+    "RTK",
+    "THUNK",
+    "Typescript",
+  ];
 
   const [firstRendering, setFirstRendering] = useState(true);
   const [langFilter, setLangFilter] = useState(initialState);
@@ -17,9 +36,12 @@ const EduPage = () => {
     {
       id: "sqisoft",
       dueDate: "2019.09 ~ 재직중",
+      startDt: "2019.09",
+      endDt: "",
       companyNm: "에스큐아이소프트",
       team: "사원",
-      companyDetail: "2020.02",
+      companyDetail:
+        "시스템 통합 사업과 솔루션 사업을 전문으로 하는 소프트웨어 회사",
       work: "웹개발자(F/E)",
     },
   ]);
@@ -32,15 +54,7 @@ const EduPage = () => {
           title: "영업 관리 시스템 개발 및 운영, 유지보수",
           date: "2019.09.02~2021.12.31",
           impTxt: `사내의 영업이익/ 투입 관리할 수 있는 웹사이트 유지보수 및 개선`,
-          stack: [
-            "Spring Framework",
-            "JAVA",
-            "JSP",
-            "Mybatis",
-            "MYSQL",
-            "AWS",
-            "JQuery",
-          ],
+          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQUERY"],
           result:
             "소나큐브를 통해 버그/취약점 개선하여 안정성 수립 / MSA 구조 전환",
           detailWork: [
@@ -55,18 +69,7 @@ const EduPage = () => {
           title: "목표 서비스 개발 (OKR)",
           date: "2020.04.01.~2020.05.10",
           impTxt: `사내 부서/기업별 목표 및 진척도 관리 페이지 개발`,
-          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQuery"],
-          result: "매 주마다, OKR 기반 데이터로 사업부장 주간보고 시행",
-          detailWork: [
-            "OKR 기반의 주간보고 페이지 개발",
-            "Spring boot 기반 RESTful API 개발",
-          ],
-        },
-        {
-          title: "목표 서비스 개발 (OKR)",
-          date: "2020.04.01.~2020.05.10",
-          impTxt: `사내 부서/기업별 목표 및 진척도 관리 페이지 개발`,
-          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQuery"],
+          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQUERY"],
           result: "매 주마다, OKR 기반 데이터로 사업부장 주간보고 시행",
           detailWork: [
             "OKR 기반의 주간보고 페이지 개발",
@@ -77,7 +80,7 @@ const EduPage = () => {
           title: "전표 데이터, 양식 자동화 프로그램 개발",
           date: "2021.07~2021.09",
           impTxt: `전표 데이터 엑셀파일 첨부 시 자동 전표 양식으로 변환해주는 프로그램 개발`,
-          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQuery"],
+          stack: ["SPRING", "JAVA", "JSP", "Mybatis", "MYSQL", "AWS", "JQUERY"],
           result: "500개 이상의 데이터 수기입력 =≫ 자동화 변환",
           detailWork: [
             "데이터 자동 전표 양식 변환 로직 개발",
@@ -88,7 +91,7 @@ const EduPage = () => {
           title: "사내 유연 º휴가 통합 서비스 개발",
           date: "2021.04~2021.06",
           impTxt: `사내 직원들의 휴가와 근무시간을 기록/관리하는 웹서비스 제작`,
-          stack: ["REACT", "Spring Boot", "JPA", "Jenkins", "Mysql"],
+          stack: ["REACT", "SpringBoot", "JPA", "Jenkins", "MYSQL"],
           result: "서면결제-≫시스템화, 개발 프로세스 구축",
           detailWork: [
             "피그마 툴 이용하여 UI 기획",
@@ -139,7 +142,7 @@ const EduPage = () => {
           title: "국립중앙박물관 ETRI 큐레이터 웹사이트",
           date: "2022.07~2022.09",
           impTxt: `큐레이터 전시회 기획을 위한, 소장품 관리할 수 있는 웹 제작`,
-          stack: ["REACT", "Typescript", "NODE.JS", "JENKINS"],
+          stack: ["REACT", "Typescript", "NODE.JS", "Jenkins"],
           result: "개발프로세스 경험, Typescript 기반으로 제작",
           detailWork: [
             "로그인, 프로젝트/소장품 상세페이지 프론트엔드 개발",
@@ -179,10 +182,15 @@ const EduPage = () => {
             {intro.current.map((item) => {
               return (
                 <Row>
-                  <td>{item.dueDate}</td>
-                  <td>{item.companyDetail}</td>
+                  <td>
+                    {item.dueDate +
+                      "(" +
+                      dayjs(dayjs()).diff(item.startDt, "year") +
+                      "년)"}
+                  </td>
                   <td>{item.companyNm}</td>
                   <td>{item.team}</td>
+                  <td>{item.companyDetail}</td>
                   <td>{item?.work}</td>
                 </Row>
               );
@@ -191,9 +199,9 @@ const EduPage = () => {
         </table>
       </Layout>
       <WorkDetailArea>
-        <TagList>
+        {/* <TagList>
           TOP LANG
-          {initialState.map((item) => (
+          {initialState.slice(0, 4).map((item) => (
             <LangButton
               elemType={"BUTTON"}
               isActive={langFilter.some((t) => t === item)}
@@ -201,7 +209,7 @@ const EduPage = () => {
               onClick={() => handleClickFilter(item)}
             />
           ))}
-        </TagList>
+        </TagList> */}
         <WorkListArea>
           {workDetail.current.map((item, index) => {
             return (

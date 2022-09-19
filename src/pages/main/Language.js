@@ -65,13 +65,18 @@ const Language = () => {
       display: true,
       text: "Bar Graph to show proficency",
     },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
     labels: false,
   };
   const data = {
     labels,
     datasets: [
       {
-        data: [40, 75, 75, 90, 30, 50, 40, 50],
+        data: [45, 90, 75, 90, 30, 50, 60, 50],
         backgroundColor: [
           "rgba(255, 159, 64, 0.2)",
           "rgba(54, 162, 235, 0.2)",

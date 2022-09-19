@@ -8,6 +8,7 @@ import EduPage from "../pages/main/EduPage";
 import WorkPage from "../pages/main/WorkPage";
 import Introduce from "../pages/main/Introduce";
 import Language from "../pages/main/Language";
+import ProjectPage from "../pages/main/Project";
 
 const Routes = () => {
   const mainRoutes: RouteObject = {
@@ -41,8 +42,8 @@ const Routes = () => {
         element: <Language />,
       },
       {
-        path: "certi",
-        element: <WorkPage />,
+        path: "project",
+        element: <ProjectPage />,
       },
     ],
   };

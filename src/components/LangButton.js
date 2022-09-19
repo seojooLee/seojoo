@@ -35,9 +35,18 @@ const ColorType = {
   JAVA: "orange",
   MYSQL: "BLUE",
   REACT: "SKYBLUE",
-  JQuery: "PURPLE",
+  JQUERY: "PURPLE",
   AWS: "BLACK",
   SPRING: "GREEN",
+  JSP: "darkOrange",
+  Mybatis: "PINK",
+  SpringBoot: "darkgreen",
+  JPA: "darkBlue",
+  Jenkins: "#f46c03",
+  RTK: "#5500ff94",
+  THUNK: "#ffd800",
+  "NODE.JS": "#e91e63",
+  Typescript: "#3a6ab7",
 };
 const LangText = styled.div`
   width: max-content;

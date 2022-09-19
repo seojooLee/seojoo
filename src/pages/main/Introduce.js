@@ -156,7 +156,7 @@ const IntroBox = styled.div`
   width: 750px;
   background: white;
   white-space: normal;
-  box-shadow: 2px 2px 0px 0px #efefef;
+  box-shadow: 20px 6px 14px 0px #00000047;
   padding: 30px 80px;
   margin-bottom: 1px;
   img {
@@ -180,6 +180,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 `;
 
 export default Introduce;
