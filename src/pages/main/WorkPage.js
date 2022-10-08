@@ -149,6 +149,17 @@ const EduPage = () => {
             "Redux Thunk 개발환경 세팅",
           ],
         },
+        {
+          title: "B2C 프로젝트 - 식당/카페 키오스크 만족도 조사",
+          date: "2022.10.01~2022.10.30 (한달)",
+          impTxt: `기업 식당 만족도 키오스크 개발`,
+          stack: ["REACT", "Typescript", "NODE.JS", "Jenkins"],
+          result: "식당/키오스크 만족도 체크 리포트 작성",
+          detailWork: [
+            "로그인, 프로젝트/소장품 상세페이지 프론트엔드 개발",
+            "Redux Thunk 개발환경 세팅",
+          ],
+        },
       ],
     },
   ]);
@@ -199,7 +210,7 @@ const EduPage = () => {
         </table>
       </Layout>
       <WorkDetailArea>
-        {/* <TagList>
+        <TagList>
           TOP LANG
           {initialState.slice(0, 4).map((item) => (
             <LangButton
@@ -209,7 +220,7 @@ const EduPage = () => {
               onClick={() => handleClickFilter(item)}
             />
           ))}
-        </TagList> */}
+        </TagList>
         <WorkListArea>
           {workDetail.current.map((item, index) => {
             return (
