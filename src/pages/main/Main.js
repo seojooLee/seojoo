@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
 import { useMediaQuery } from "react-responsive";
+import dayjs from "dayjs";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -19,6 +20,20 @@ const Main = () => {
       setCursorLocation({ x: mouseX, y: mouseY });
     });
   }, []);
+
+  useEffect(()=>{
+    let test ="";
+
+
+    let pivot = dayjs('2022-10-26 00:00:00 UTC');
+    console.log(pivot.format('YYYY-MM-DD'));
+    let today = dayjs().set('hour',0);
+
+    console.log(pivot.diff(today,'day' ))
+    let diff = pivot.diff(today,'day',true);
+    console.log("florr", Math.floor(diff))
+  },[])
+ 
   return (
     <Layout>
       <Default>
@@ -27,7 +42,7 @@ const Main = () => {
           alt="noImage"
           draggable={false}
         />
-        안녕하세요, 이서주입니다.
+        안녕하세요 이서주입니다.
         <Circle></Circle>
       </Default>
       <MoveBtn
@@ -42,7 +57,7 @@ const Main = () => {
 
 const BgAnimation = keyframes`
   0%{
-    background : linear-gradient(304deg, #ffc107, transparent);
+  background : linear-gradient(304deg, #ffc107, transparent);
   }
    
   100%{

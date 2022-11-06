@@ -29,7 +29,15 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
-  @charset "utf-8";
+
+ 
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url(${require("../assets/fonts/RobotoSlab-Medium.ttf")}) format('truetype');
+  src: url(${require("../assets/fonts/NanumSquareR.woff")}) format('woff'),
+        url(${require("../assets/fonts/NanumSquareR.ttf")}) format('truetype');
+  }
 
  
   @font-face {
@@ -72,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     width: 100%;
     height: 100%;
-    font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+    font-family: 'Roboto' !important;
     box-sizing: border-box;
     background-color: white ;
     #root {

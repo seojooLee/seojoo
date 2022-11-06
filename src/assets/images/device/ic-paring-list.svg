@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
-    <circle cx="9.1" cy="11.3" r=".7"/>
-    <circle cx="9.1" cy="14.8" r=".7"/>
-    <circle cx="9.1" cy="18.3" r=".7"/>
-    <path d="M11.9 14.1h8.5c.4 0 .7.3.7.7v.1c0 .4-.3.7-.7.7h-8.5c-.4 0-.7-.3-.7-.7v-.1c0-.4.3-.7.7-.7zM11.9 17.6h8.5c.4 0 .7.3.7.7v.1c0 .4-.3.7-.7.7h-8.5c-.4 0-.7-.3-.7-.7v-.1c0-.4.3-.7.7-.7zM11.9 10.6h8.5c.4 0 .7.3.7.7v.1c0 .4-.3.7-.7.7h-8.5c-.4 0-.7-.3-.7-.7v-.1c0-.4.3-.7.7-.7z"/>
-    <text font-family="Gotham-Medium" font-size="12px" transform="translate(2.258 12)">
-        P
-    </text>
-</svg>

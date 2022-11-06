@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/seojoo/static/js/main.2232589b.js",
+    "main.js": "/seojoo/static/js/main.af6cd900.js",
     "static/media/NanumSquareL.ttf": "/seojoo/static/media/NanumSquareL.ace03365daa3d33bdec6.ttf",
     "static/media/NanumSquareB.ttf": "/seojoo/static/media/NanumSquareB.ebe0aa17b7967cd61f16.ttf",
     "static/media/NanumSquareEB.ttf": "/seojoo/static/media/NanumSquareEB.e54714432fdd6e1724a7.ttf",
@@ -16,10 +16,10 @@
     "static/media/Java-icon.svg": "/seojoo/static/media/Java-icon.fdc17e4c1debe81a1c37eadb28d4ee2f.svg",
     "static/media/Html-icon.svg": "/seojoo/static/media/Html-icon.e98fdaf8e16153f7bc5009975a579d1a.svg",
     "index.html": "/seojoo/index.html",
-    "static/media/React-icon.svg": "/seojoo/static/media/React-icon.1efc62f872c28e86c336eeb681e90572.svg",
-    "main.2232589b.js.map": "/seojoo/static/js/main.2232589b.js.map"
+    "static/media/React-icon.svg": "/seojoo/static/media/React-icon.9dac1b97e15ed0e603f8cab7927cf549.svg",
+    "main.af6cd900.js.map": "/seojoo/static/js/main.af6cd900.js.map"
   },
   "entrypoints": [
-    "static/js/main.2232589b.js"
+    "static/js/main.af6cd900.js"
   ]
 }

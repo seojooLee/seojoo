@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Navigate, useRoutes } from "react-router-dom";
-import type { RouteObject } from "react-router-dom";
 
 import Main from "../pages/main/Main";
 import AboutMe from "../pages/main/AboutMe";
@@ -10,13 +9,17 @@ import Introduce from "../pages/main/Introduce";
 import Language from "../pages/main/Language";
 import ProjectPage from "../pages/main/Project";
 
+//renew
+import MainPage from "../pages/renew/Main";
+import Layout from "../pages/renew/common/Layout";
 const Routes = () => {
-  const mainRoutes: RouteObject = {
+  const mainRoutes = {
     path: "/seojoo",
+    element: <Layout />,
     children: [
       {
         index: true,
-        element: <Main />,
+        element: <MainPage />,
       },
       {
         path: "intro",
@@ -25,7 +28,7 @@ const Routes = () => {
     ],
   };
 
-  const introRoutes: RouteObject = {
+  const introRoutes = {
     path: "/seojoo/about",
     element: <AboutMe />,
     children: [
@@ -48,12 +51,12 @@ const Routes = () => {
     ],
   };
 
-  const noMatchRoutes: RouteObject = {
+  const noMatchRoutes = {
     path: "*",
     element: <Navigate to="/seojoo" />,
   };
 
-  const routes: RouteObject[] = [mainRoutes, noMatchRoutes, introRoutes];
+  const routes = [mainRoutes, noMatchRoutes, introRoutes];
 
   return useRoutes(routes);
 };
