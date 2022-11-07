@@ -26,8 +26,7 @@ const MainPage = () => {
           <div className="box">
             <div className="head">Blog</div>
             <div className="context">
-              I'm uploading my new programming knowledge on my tech-blog to
-              remember it
+              I'm uploading my new programming knowledge on my tech-blog
             </div>
             <StyledButton>Check it out!</StyledButton>
           </div>
@@ -64,23 +63,24 @@ const Line = styled.div`
 const ProfileImg = styled.img`
   box-shadow: 13px 20px 20px 4px #00000033;
   user-select: none;
-
   background: radial-gradient(circle at center, white 60%, transparent 61%);
   border-radius: 50%;
   overflow: hidden;
   //border: 1px solid white;
-  width: ${({ isMobile }) => (isMobile ? "20rem" : "30rem")};
+  width: ${({ isMobile }) => (isMobile ? "13rem" : "30rem")};
 `;
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: min(40px);
+  //padding: min(40px);
+  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #252525;
-  flex-direction: ${({ isMobile }) => (isMobile ? "column" : "row")};
+  flex-wrap: wrap;
+  //  flex-direction: ${({ isMobile }) => (isMobile ? "column" : "row")};
   border: 1px solid black;
   gap: 40px;
 `;
@@ -109,15 +109,17 @@ const LeftSide = styled.div`
       flex-direction: column;
       .head {
         background: #141414;
-        border: 1px solid white;
+        border: 0.5px solid white;
         width: 100%;
         color: white;
         padding: 3px;
       }
       .context {
         padding: 1rem 0.5rem;
-        height: 4rem;
-        width: 200px;
+        text-overflow: ellipsis;
+        white-space: pre-wrap;
+        overflow: hidden;
+        height: 100px;
       }
     }
   }

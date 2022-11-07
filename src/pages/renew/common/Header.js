@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useCallback, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const Header = () => {
@@ -11,10 +12,16 @@ const Header = () => {
     { id: "contact", value: "Contact" },
   ]);
   const location = useLocation();
+  const navigate = useNavigate();
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
+  const moveUrl = useCallback(() => {
+    navigate();
+  }, [navigate]);
 
   return (
-    <Container>
-      <div className="logo">
+    <Container isMobile={isMobile}>
+      <div className="logo" onClick={() => moveUrl()}>
         <img src={process.env.PUBLIC_URL + "/image/logo.png"} alt="no_logo" />
       </div>
       <div className="category">
@@ -28,9 +35,8 @@ const Header = () => {
 };
 
 const Item = styled.div`
-  width: 90px;
   text-align: center;
-
+  padding: 0 4px;
   ${({ isActive }) =>
     isActive &&
     css`
@@ -57,6 +63,9 @@ const Container = styled.div`
   user-select: none;
   background-color: #252525;
   color: whitesmoke;
+
+  ${({ isMobile }) => isMobile && css``}
+
   .logo {
     flex: 1;
     font-size: 1.3rem;
