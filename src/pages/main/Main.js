@@ -21,19 +21,16 @@ const Main = () => {
     });
   }, []);
 
-  useEffect(()=>{
-    let test ="";
+  useEffect(() => {
+    let pivot = dayjs("2022-10-26 00:00:00 UTC");
+    console.log(pivot.format("YYYY-MM-DD"));
+    let today = dayjs().set("hour", 0);
 
+    console.log(pivot.diff(today, "day"));
+    let diff = pivot.diff(today, "day", true);
+    console.log("florr", Math.floor(diff));
+  }, []);
 
-    let pivot = dayjs('2022-10-26 00:00:00 UTC');
-    console.log(pivot.format('YYYY-MM-DD'));
-    let today = dayjs().set('hour',0);
-
-    console.log(pivot.diff(today,'day' ))
-    let diff = pivot.diff(today,'day',true);
-    console.log("florr", Math.floor(diff))
-  },[])
- 
   return (
     <Layout>
       <Default>

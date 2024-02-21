@@ -5,19 +5,23 @@ import styled, { css } from "styled-components";
 
 const Header = () => {
   const categoryRef = useRef([
-    { id: "seojoo", value: "Home" },
+    { id: "home", value: "Home" },
     { id: "about", value: "About" },
-    { id: "blog", value: "Blog" },
+    { id: "project ", value: "Project" },
     { id: "portfolio", value: "Portfolio" },
-    { id: "contact", value: "Contact" },
+    // { id: "contact", value: "Contact" },
   ]);
   const location = useLocation();
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
-  const moveUrl = useCallback(() => {
-    navigate();
-  }, [navigate]);
+  const moveUrl = useCallback(
+    (path) => {
+      const defaultUrl = "/seojoo";
+      navigate(defaultUrl + path);
+    },
+    [navigate]
+  );
 
   return (
     <Container isMobile={isMobile}>
@@ -27,7 +31,11 @@ const Header = () => {
       <div className="category">
         {categoryRef.current.map((item, index) => {
           const isActive = location.pathname.indexOf(item.id) !== -1;
-          return <Item isActive={isActive}>{item.value}</Item>;
+          return (
+            <Item onClick={() => moveUrl("/" + item.id)} isActive={isActive}>
+              {item.value}
+            </Item>
+          );
         })}
       </div>
     </Container>
@@ -55,7 +63,7 @@ const Container = styled.div`
   max-height: 60px;
   align-items: center;
   padding: 10px 2rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid black;
   box-shadow: 13px 20px 20px 4px #00000033;
 
   display: flex;

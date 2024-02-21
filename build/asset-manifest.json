@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/seojoo/static/js/main.9613427e.js",
+    "main.js": "/seojoo/static/js/main.81c27a54.js",
     "static/media/NanumSquareL.ttf": "/seojoo/static/media/NanumSquareL.ace03365daa3d33bdec6.ttf",
     "static/media/NanumSquareB.ttf": "/seojoo/static/media/NanumSquareB.ebe0aa17b7967cd61f16.ttf",
     "static/media/NanumSquareEB.ttf": "/seojoo/static/media/NanumSquareEB.e54714432fdd6e1724a7.ttf",
@@ -16,11 +16,14 @@
     "static/media/RobotoSlab-Medium.ttf": "/seojoo/static/media/RobotoSlab-Medium.876cc93e0cffdc827eb7.ttf",
     "static/media/Java-icon.svg": "/seojoo/static/media/Java-icon.fdc17e4c1debe81a1c37eadb28d4ee2f.svg",
     "static/media/Html-icon.svg": "/seojoo/static/media/Html-icon.e98fdaf8e16153f7bc5009975a579d1a.svg",
+    "static/media/github.svg": "/seojoo/static/media/github.4bfdb82fd39c519d92c6057644d597ce.svg",
+    "static/media/blog.svg": "/seojoo/static/media/blog.99419ee8f028534bc3a9ab07a3911678.svg",
     "index.html": "/seojoo/index.html",
+    "static/media/linkedin.svg": "/seojoo/static/media/linkedin.033b1683dcd2583d7ff2c6ce56160dac.svg",
     "static/media/React-icon.svg": "/seojoo/static/media/React-icon.9dac1b97e15ed0e603f8cab7927cf549.svg",
-    "main.9613427e.js.map": "/seojoo/static/js/main.9613427e.js.map"
+    "main.81c27a54.js.map": "/seojoo/static/js/main.81c27a54.js.map"
   },
   "entrypoints": [
-    "static/js/main.9613427e.js"
+    "static/js/main.81c27a54.js"
   ]
 }

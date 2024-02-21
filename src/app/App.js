@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: 'Roboto' !important;
     box-sizing: border-box;
-    background-color: white ;
+    background-color: #252525;
     #root {
       width: 100%;
       height: 100%;

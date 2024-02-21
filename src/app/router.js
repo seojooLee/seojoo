@@ -12,51 +12,67 @@ import ProjectPage from "../pages/main/Project";
 //renew
 import MainPage from "../pages/renew/Main";
 import Layout from "../pages/renew/common/Layout";
+import About from "../pages/renew/About";
+import Portfolio from "../pages/renew/Portfolio";
+import Blog from "../pages/renew/Blog";
+import Contact from "../pages/renew/Contact";
 const Routes = () => {
   const mainRoutes = {
     path: "/seojoo",
     element: <Layout />,
     children: [
       {
-        index: true,
+        path: "home",
         element: <MainPage />,
       },
       {
-        path: "intro",
-        element: <Introduce />,
-      },
-    ],
-  };
-
-  const introRoutes = {
-    path: "/seojoo/about",
-    element: <AboutMe />,
-    children: [
-      {
-        path: "edu",
-        element: <EduPage />,
+        path: "about",
+        element: <About />,
       },
       {
-        path: "work",
-        element: <WorkPage />,
-      },
-      {
-        path: "lang",
-        element: <Language />,
+        path: "portfolio",
+        element: <Portfolio />,
       },
       {
         path: "project",
-        element: <ProjectPage />,
+        element: <Blog />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   };
 
+  // const introRoutes = {
+  //   path: "/seojoo/about",
+  //   element: <AboutMe />,
+  //   children: [
+  //     {
+  //       path: "edu",
+  //       element: <EduPage />,
+  //     },
+  //     {
+  //       path: "work",
+  //       element: <WorkPage />,
+  //     },
+  //     {
+  //       path: "lang",
+  //       element: <Language />,
+  //     },
+  //     {
+  //       path: "project",
+  //       element: <ProjectPage />,
+  //     },
+  //   ],
+  // };
+
   const noMatchRoutes = {
     path: "*",
-    element: <Navigate to="/seojoo" />,
+    element: <Navigate to="/seojoo/home" />,
   };
 
-  const routes = [mainRoutes, noMatchRoutes, introRoutes];
+  const routes = [mainRoutes, noMatchRoutes];
 
   return useRoutes(routes);
 };
