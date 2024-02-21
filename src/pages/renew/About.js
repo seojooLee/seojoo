@@ -46,9 +46,7 @@ const About = () => {
       ></animated.div>
       <IntroBox>
         <img src={process.env.PUBLIC_URL + "/image/hello.png"} alt="img" />
-        <Title>
-          안녕하세요. 프론트에 백엔드 한방울 섞은 개발자 이서주입니다.
-        </Title>
+        <Title>안녕하세요. 프론트엔드 개발자 이서주입니다.</Title>
         저는 카멜레온처럼 주변 환경에 맞춰서 빠르게 적응하는 것이 저의 장점이라
         생각해요.
         <br /> 새로운 언어와 트렌드도 경계없이 수용하는 마음을 가지고 있습니다.

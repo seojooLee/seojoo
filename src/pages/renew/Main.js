@@ -55,7 +55,7 @@ const MainPage = () => {
         <ProfileImg
           isMobile={isMobile}
           alt="noImage"
-          src={process.env.PUBLIC_URL + "/image/person.png"}
+          src={process.env.PUBLIC_URL + "/image/person.jpg"}
           draggable={false}
         />
         <div className="circle">
@@ -110,6 +110,7 @@ const Line = styled.div`
 
 const ProfileImg = styled.img`
   z-index: 1;
+  aspect-ratio: 1/1;
   position: relative;
   box-shadow: 13px 20px 20px 4px #00000033;
   user-select: none;
@@ -118,6 +119,7 @@ const ProfileImg = styled.img`
   overflow: hidden;
   //border: 1px solid white;
   width: ${({ isMobile }) => (isMobile ? "13rem" : "30rem")};
+  object-fit: cover;
 `;
 
 const Container = styled.div`
